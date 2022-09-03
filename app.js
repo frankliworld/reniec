@@ -15,11 +15,11 @@ form.addEventListener('submit', async (e) => {
     result.innerHTML = `<p>Respuesta para <b>${data.document}</b>:</p> <pre>${JSON.stringify(response, null, 2)}</pre>`;
   } catch {
     console.log('error');
+    result.innerHTML = `<p>Ha ocurrido un error, vuelva a intentarlo en unos minutos</p>`;
   } finally {
     button.removeAttribute('aria-busy');
     button.removeAttribute('disabled');
     button.textContent = 'Consultar';
     form.reset();
-    
   }
 });

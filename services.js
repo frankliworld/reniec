@@ -13,6 +13,38 @@ async function getInfoWithDni(dni) {
     body: JSON.stringify({dni})
   })
   const {result} = await response.json()
-  return result
-  
+  return result 
+}
+
+//in development
+async function getInfoWithNames({paterno, materno, nombres}) {
+  const response = await fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({paterno, materno, nombres})
+  })
+  const {result} = await response.json()
+  return result 
+}
+
+//in development
+async function getInfoWithRuc(ruc) {
+  const response = await fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({ruc})
+  })
+  const {result} = await response.json()
+  return result 
+}
+
+//in development
+async function validateCPE({numRuc, codComp, numeroSerie, numero, fechaEmision, monto}){
+  const response = await fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({numRuc, codComp, numeroSerie, numero, fechaEmision, monto})
+  })
+  const {result} = await response.json()
+  return result 
 }
