@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultas Reniec</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+  <meta name="description" content="Consultar datos solo con DNI - gratis desde Reniec">
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  
+</head>
+<body>
+  <main class="container">
+    <h1>Consulta en Reniec</h2>
+    <form >
+      <label>
+        <span>Ingresar DNI a Consulta</span>
+        <input type="number" name="document" placeholder="@Ejemplo: 70081234" required/>
+      </label>
+      <button type="submit">Consultar</button>
+    </form>
+    <section id="result">
+    </section>
+    <hr>
+    <article>
+      <hgroup>
+        <h2>Cómo funciona?</h2>
+        <h3>Este servicio es totalmente gratuito y no requiere de ningún tipo de registro.</h3>
+      </hgroup>
+      <div class="headings">
+        <p>Para consultar los datos de una persona solo debes ingresar su número de DNI y presionar el botón "Consultar".</p>
+        <p>Los datos que se muestran son los mismos que se encuentran en el Registro Nacional de Identificación y Estado Civil (RENIEC).</p>
+        <p>Este servicio no almacena ningún dato de los usuarios.</p>
+      </div>
+    </article>
+    <blockquote>
+      "Software libre de código abierto, sin fines de lucro."
+      <footer>
+        <cite>- spaceX</cite>
+      </footer>
+    </blockquote>
+  </main>
+  
+  <script src="./services.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
