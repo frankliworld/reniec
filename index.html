@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consultas RENIEC</title>
   <link rel="icon" type="image/x-icon" href="images/favicon.png">
-  <meta name="description" content="Consulta datos desde RENIEC solo con DNI. Este servicio es totalmente gratuito y no requiere de ningún tipo de registro.">
+  <meta name="description" content="Consulta datos desde RENIEC solo con DNI o Nombres. Este servicio es totalmente gratuito y no requiere de ningún tipo de registro.">
   <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  <link rel="stylesheet" href="css/styles.css">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BD84EWERH6"></script>
   <script>
@@ -16,13 +17,6 @@
     gtag('js', new Date());
     gtag('config', 'G-BD84EWERH6');
   </script>
-  <style>
-    :root {--primary: #58a6ff !important}
-    header {position: relative}
-    pre {padding: 16px}
-    h1 {padding-right: 80px}
-    .icon {position: absolute;right: 0;top: 0}
-  </style>
 </head>
 <body>
   <main class="container">
@@ -35,6 +29,17 @@
         </svg>
       </a>
     </header>
+    <section>
+      <div class="switch-holder">
+        <div class="switch-label">
+          <i class="fa fa-bluetooth-b"></i><span>Consulta por nombres</span>
+        </div>
+        <div class="switch-toggle">
+          <input type="checkbox" id="names">
+          <label for="names"></label>
+        </div>
+      </div>
+    </section>
     <form >
       <label>
         <span>Ingresar DNI a consultar:</span>
@@ -51,9 +56,11 @@
         <h3>Este servicio es totalmente gratuito y no requiere de ningún tipo de registro.</h3>
       </hgroup>
       <div class="headings">
-        <p>Para consultar los datos de una persona solo debes ingresar su número de DNI y presionar el botón "Consultar".</p>
-        <p>Los datos que se muestran son los mismos que se encuentran en el Registro Nacional de Identificación y Estado Civil (RENIEC).</p>
-        <p>Este servicio no almacena ningún dato de los usuarios.</p>
+        <ul>
+          <li>Para consultar los datos de una persona solo debes ingresar su número de DNI y presionar el botón "Consultar".</li>
+          <li>Los datos que se muestran son los mismos que se encuentran en el Registro Nacional de Identificación y Estado Civil (RENIEC).</li>
+          <li>Este servicio no almacena ningún dato de los usuarios.</li>
+        </ul>
       </div>
     </article>
     <blockquote>

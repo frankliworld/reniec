@@ -1,5 +1,5 @@
 
-const url = "https://www.softwarelion.xyz/api/reniec/reniec-dni"
+const url = "https://www.softwarelion.xyz/api/reniec"
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyNDY3LCJjb3JyZW8iOiJ1aS5zcGFjZS5mckBnbWFpbC5jb20iLCJpYXQiOjE2NjIxNDE3Mzd9.SkGQGmN8LV6Xex9faOLuWms8yMd3pkyl_FxB6tUnP3g"
 const headers = {
   "Content-Type": "application/json",
@@ -7,7 +7,7 @@ const headers = {
 }
 
 async function getInfoWithDni(dni) {
-  const response = await fetch(url, {
+  const response = await fetch(`${url}/reniec-dni`, {
     method: "POST",
     headers,
     body: JSON.stringify({dni})
@@ -17,15 +17,18 @@ async function getInfoWithDni(dni) {
   return result
 }
 
-//in development
-async function getInfoWithNames({paterno, materno, nombres}) {
-  const response = await fetch(url, {
+async function getInfoWithNames(paterno, materno, nombres) {
+  const response = await fetch(`${url}/reniec-nombres`, {
     method: "POST",
     headers,
     body: JSON.stringify({paterno, materno, nombres})
   })
-  const {result} = await response.json()
-  return result 
+  const {success, result, message } = await response.json()
+  if(!success) return {message, success}
+  return {
+    response: result,
+    success
+  }
 }
 
 //in development
