@@ -12,8 +12,9 @@ async function getInfoWithDni(dni) {
     headers,
     body: JSON.stringify({dni})
   })
-  const {result} = await response.json()
-  return result 
+  const {success, result, message} = await response.json()
+  if(!success) return message
+  return result
 }
 
 //in development

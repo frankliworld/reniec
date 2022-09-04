@@ -12,9 +12,9 @@ form.addEventListener('submit', async (e) => {
     button.setAttribute('disabled', true);
     button.textContent = 'Consultando datos...';
     const response = await getInfoWithDni(data.document);
-    result.innerHTML = `<p>Respuesta para <b>${data.document}</b>:</p> <pre>${JSON.stringify(response, null, 2)}</pre>`;
-  } catch {
-    console.log('error');
+    result.innerHTML = `<p>Respuesta de consulta <small>"${data.document}"</small>:</p> <pre>${JSON.stringify(response, null, 2)}</pre>`;
+  } catch (err) {
+    console.error(err);
     result.innerHTML = `<p>Ha ocurrido un error, vuelva a intentarlo en unos minutos</p>`;
   } finally {
     button.removeAttribute('aria-busy');
